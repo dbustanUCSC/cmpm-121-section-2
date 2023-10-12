@@ -79,6 +79,7 @@
   animation: cactusMoveAnimation 2.5s linear infinite;
 }
 
+
 @keyframes cactusMoveAnimation
 {
   0%
@@ -107,7 +108,10 @@
 
 .birdMove
 {
-  animation: birdMove 4.5s linear infinite;
+  animation-name: birdMove;
+  animation-duration: 4.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes birdMove

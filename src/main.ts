@@ -14,7 +14,7 @@ SetText("click to start!")
 var isJumping = false
 let gameOver = true
 
-document.addEventListener('click', () => jump())
+document.addEventListener('mousedown', () => jump())
 
 
 setInterval(function () { Main()}, 10)
@@ -118,6 +118,7 @@ function StartGame()
     score = 0
     cactus?.classList.add("cactusMove")
     bird?.classList.add("birdMove")
+    
 }
 
 function SetText(s: string)
