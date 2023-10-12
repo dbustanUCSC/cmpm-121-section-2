@@ -15,9 +15,11 @@ var isJumping = false
 let gameOver = true
 
 document.addEventListener('mousedown', () => jump())
-
+document.addEventListener('click', () => StartGame())
 
 setInterval(function () { Main()}, 10)
+
+let birdSpeed: number = 2
 
 function Main()
 {
@@ -25,27 +27,26 @@ function Main()
     {
         score = score + 1;
         SetText("Score: " + score)
-
+        bird!.style.animationDuration = birdSpeed.toString();
+        birdSpeed -= 0.0000001;
+    
         CheckGameOver()
     }
+
+    
+
 }
 
 
 function jump()
 {
-    if(gameOver === false)
-    {
         if(isJumping == false)
         {
             isJumping = true
             dino?.classList.add("jump")
             setTimeout(RemoveJump, 500)
         }
-    }
-    else
-    {
-        StartGame();
-    }
+    
     
 }
 
@@ -113,11 +114,15 @@ function CheckGameOver()
 
 function StartGame()
 {
+    if (gameOver === true){
     console.log("Game started!")
     gameOver = false
     score = 0
     cactus?.classList.add("cactusMove")
     bird?.classList.add("birdMove")
+
+    }
+    
     
 }
 
