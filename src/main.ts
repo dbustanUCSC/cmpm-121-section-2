@@ -2,6 +2,7 @@
 
 import './style.css'
 
+
 const dino = document.getElementById("dino")
 const cactus = document.getElementById("cactus")
 const bird = document.getElementById("bird")
@@ -19,7 +20,6 @@ document.addEventListener('click', () => StartGame())
 
 setInterval(function () { Main()}, 10)
 
-let birdSpeed: number = 2
 
 function Main()
 {
@@ -27,13 +27,11 @@ function Main()
     {
         score = score + 1;
         SetText("Score: " + score)
-        bird!.style.animationDuration = birdSpeed.toString();
-        birdSpeed -= 0.0000001;
     
         CheckGameOver()
     }
 
-    
+
 
 }
 
@@ -120,7 +118,8 @@ function StartGame()
     score = 0
     cactus?.classList.add("cactusMove")
     bird?.classList.add("birdMove")
-
+    
+    
     }
     
     
